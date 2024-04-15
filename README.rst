@@ -95,6 +95,13 @@ connection, but historically has been over PS/2 or ADB connections.
 - This interrupt notifies the currently focused application of a 'key pressed'
   event.
 
+Further More,
+---------------------------------------
+In addition to the thorough explanation provided, it's worth diving into the complexities of keyboard input processing within the OS. Once the computer's HID universal keyboard device driver receives the keycode, the operating system's input subsystem is activated. This subsystem handles the translation of raw input events, including key presses, into higher-level events that applications can interpret.
+
+The operating system's input subsystem typically includes components responsible for event handling, event queuing, and event dispatching. When a key press event is detected by the keyboard driver, it is encapsulated into an input event object and placed into the system's input event queue.
+
+Subsequently, the event dispatcher component retrieves the input events from the queue and forwards them to the appropriate application or window based on factors such as input focus and event routing rules. This ensures that the key press event is delivered to the currently active application or window for processing.
 
 Interrupt fires [NOT for USB keyboards]
 ---------------------------------------
